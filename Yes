@@ -1,0 +1,19 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "queue",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "character",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "userId",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

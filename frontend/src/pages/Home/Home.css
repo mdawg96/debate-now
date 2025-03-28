@@ -1,0 +1,353 @@
+.title {
+    font-size: 20vh;
+    margin-top: 10vh;
+}
+
+/* Top buttons container */
+.top-buttons {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 5px;
+    z-index: 1000;
+    padding: 10px;
+}
+
+.leaderboardButton, .logInButton {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 2px solid white;
+}
+
+.leaderboardButton:hover, .logInButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.playButtons {
+    flex-direction: row;
+    gap: 15px;
+    display: flex;
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+    margin-top: -40vh;
+}
+
+.blueButtons, .redButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.blueButtons {
+    position: relative;
+    right: 25vw;
+    width: 20vw;
+}
+
+.redButtons {
+    position: relative;
+    left: 25vw;
+    width: 20vw;
+}
+
+/* Style individual buttons */
+.blueButtons button {
+    background-color: blue;
+    color: white;  /* Makes text readable on blue background */
+    height: 55px;
+    border: 2px solid white;
+}
+
+.redButtons button {
+    background-color: red;
+    color: white;  /* Makes text readable on red background */
+    height: 55px;
+    border: 2px solid white;
+}
+
+.redButtons button:hover {
+    background-color: lightcoral;
+}
+
+.blueButtons button:hover {
+    background-color: lightblue;  /* or any lighter blue color you prefer */
+}
+
+.Tracker {
+    font-size: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 5vh;
+}
+
+/* Add these styles */
+.loginBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: none;
+    width: 300px;
+}
+
+.loginBox.show {
+    display: block;
+}
+
+/* Update all input styling */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white !important;
+    color: black !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: black !important;
+    -webkit-opacity: 1 !important;
+}
+
+input:focus {
+    outline: 2px solid #000;
+    border-color: #000;
+    background-color: white !important;
+    color: black !important;
+    opacity: 1 !important;
+}
+
+input:not(:placeholder-shown) {
+    opacity: 1 !important;
+    color: black !important;
+    background-color: white !important;
+    -webkit-text-fill-color: black !important;
+}
+
+/* Update the loginBox input styles to inherit from the global input styles */
+.loginBox input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.loginBox button {
+    width: auto;  /* Override the 100% width */
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.loginBox .submitButton {
+    background-color: black;
+    color: white;
+    width: 45% !important;  /* Slightly reduced to ensure they fit */
+    height: 40px;
+    margin: 0;
+    display: inline-flex;  /* Changed to inline-flex */
+    align-items: center;
+    justify-content: center;
+}
+
+.loginBox .switchButton {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    width: 45% !important;
+    height: 40px;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginBox .submitButton, .loginBox .switchButton {
+    background-color: black;
+    color: white;
+    width: 45% !important;
+    height: 40px;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add styles for the buttons container */
+.buttonContainer {
+    display: flex;
+    flex-direction: row;  /* This ensures horizontal layout */
+    justify-content: center;  /* Center the buttons horizontally */
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+/* Add this new class for the draggable wrapper */
+.draggable-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.draggable-wrapper > div {
+    pointer-events: auto;
+}
+
+.formHeader {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 15px;
+    padding-right: 20px;
+}
+
+.closeButton {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 20px !important;
+    height: 20px;
+    line-height: 1;
+}
+
+.verificationContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.resendButton {
+    background-color: #666;
+    color: white;
+    width: 100% !important;
+    height: 40px;
+    margin-top: 10px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.resendButton:hover {
+    background-color: #888;
+}
+
+.loginPrompt {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20vh;
+    color: white;
+}
+
+.verificationMessage {
+    margin-top: 10px;
+    text-align: center;
+    color: #666;
+}
+
+.verificationMessage button {
+    background-color: #666;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.verificationMessage button:hover {
+    background-color: #888;
+}
+
+.queue-status {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 300px;
+}
+
+.queue-status p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.queue-info {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 5px;
+}
+
+.queue-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.leave-queue-button, .refresh-queue-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.refresh-queue-button {
+    background-color: #0d6efd;
+}
+
+.leave-queue-button:hover {
+    background-color: #c82333;
+}
+
+.refresh-queue-button:hover {
+    background-color: #0b5ed7;
+}
+
+/* Add disabled state for character buttons */
+.blueButtons button:disabled,
+.redButtons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

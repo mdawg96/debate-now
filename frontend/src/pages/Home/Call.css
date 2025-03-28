@@ -1,0 +1,576 @@
+.call-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-grid {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.video-container {
+    width: 40vw;
+    height: 30vw;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-container p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 0;
+}
+
+/* Camera controls - keep this new feature */
+.video-controls {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.video-control-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.video-control-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.video-control-button.disabled {
+    background-color: rgba(220, 53, 69, 0.5);
+}
+
+.camera-off-indicator {
+    color: #dc3545;
+}
+
+/* Camera toggle button in controls */
+.camera-toggle-button {
+    background-color: #17a2b8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.camera-toggle-button.disabled {
+    background-color: #dc3545;
+}
+
+.camera-toggle-button:hover {
+    filter: brightness(1.1);
+}
+
+/* Debate Timer UI */
+.debate-controls {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.start-debate-button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.start-debate-button:hover {
+    background-color: #218838;
+}
+
+.debate-status {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.stage-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stage-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 22px;
+}
+
+.timer {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.speaking-info {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.speaking-info p {
+    margin: 0;
+}
+
+.muted-indicator {
+    color: #ff5555;
+    font-weight: bold;
+}
+
+/* Transcription styles */
+.transcription-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 15px 0;
+}
+
+.transcription-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.transcription-toggle {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.transcription-toggle.enabled {
+    background-color: #dc3545;
+    color: white;
+}
+
+.transcription-toggle.disabled {
+    background-color: #28a745;
+    color: white;
+}
+
+.transcriptions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+}
+
+.transcription {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.transcription h4 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.transcription p {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.local-transcription {
+    background-color: rgba(23, 162, 184, 0.2);
+    border-left: 3px solid #17a2b8;
+}
+
+.remote-transcription {
+    background-color: rgba(255, 193, 7, 0.2);
+    border-left: 3px solid #ffc107;
+}
+
+/* Call Controls */
+.call-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.end-call-button, .restart-call-button, .retry-button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.end-call-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.restart-call-button {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.retry-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.end-call-button:hover {
+    background-color: #c82333;
+}
+
+.restart-call-button:hover {
+    background-color: #0b5ed7;
+}
+
+.retry-button:hover {
+    background-color: #218838;
+}
+
+.status-indicator {
+    margin-top: 10px;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* New styles for error message */
+.error-message {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.adblock-error {
+    background-color: rgba(255, 165, 0, 0.2);
+    border: 1px solid rgba(255, 165, 0, 0.4);
+    padding: 25px;
+    text-align: left;
+}
+
+.adblock-error h3 {
+    color: #ff9800;
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.adblock-error ul, .adblock-error ol {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.adblock-error li {
+    margin-bottom: 8px;
+}
+
+.adblock-error strong {
+    color: #ff9800;
+}
+
+.adblock-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.adblock-error .retry-button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.adblock-error .home-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #ff9800;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.adblock-error .retry-button:hover {
+    background-color: #ff7d00;
+}
+
+.adblock-error .home-button:hover {
+    background-color: rgba(255, 165, 0, 0.2);
+}
+
+.connection-status {
+    margin-top: 20px;
+    text-align: center;
+    min-height: 50px;
+}
+
+.connecting-message {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.connecting-message p {
+    margin: 5px 0;
+    color: white;
+}
+
+.connection-tips {
+    font-size: 14px;
+    color: #aaa !important;
+    text-align: left;
+    margin-top: 10px !important;
+}
+
+/* Stage background colors */
+.debate-status.first-speaker {
+    border-left: 5px solid #17a2b8;
+}
+
+.debate-status.second-speaker {
+    border-left: 5px solid #ffc107;
+}
+
+.debate-status.open-discussion {
+    border-left: 5px solid #28a745;
+}
+
+.debate-status.closing {
+    border-left: 5px solid #6c757d;
+}
+
+.debate-status.ended {
+    border-left: 5px solid #dc3545;
+}
+
+/* Debug information */
+.debug-info {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #0f0;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 12px;
+    max-width: 100%;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+
+.speaker-status {
+    margin-top: 15px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.can-speak {
+    color: #28a745;
+    background-color: rgba(40, 167, 69, 0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.cannot-speak {
+    color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+/* Judge container */
+.judge-container {
+    flex-basis: 100%;
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* When judge is visible, adjust the layout */
+.video-grid:has(.judge-container) {
+    flex-wrap: wrap;
+}
+
+.video-grid:has(.judge-container) .video-container {
+    width: 30vw;
+    height: 22vw;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .video-container {
+        width: 80vw;
+        height: 60vw;
+    }
+    
+    .video-grid:has(.judge-container) .video-container {
+        width: 80vw;
+        height: 60vw;
+    }
+    
+    .judge-container {
+        margin-top: 30px;
+    }
+}
+
+/* Chat controls */
+.chat-controls {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.chat-toggle-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.chat-toggle-button:hover {
+    background-color: #2980b9;
+}
+
+.chat-toggle-button.active {
+    background-color: #e74c3c;
+}
+
+.chat-toggle-button.active:hover {
+    background-color: #c0392b;
+}
+
+.dominance-warning {
+    background-color: rgba(255, 87, 51, 0.2);
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 10px 0;
+    text-align: center;
+    animation: pulse 1.5s infinite;
+}
+
+.dominance-warning span {
+    color: #ff5733;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@keyframes pulse {
+    0% { background-color: rgba(255, 87, 51, 0.1); }
+    50% { background-color: rgba(255, 87, 51, 0.3); }
+    100% { background-color: rgba(255, 87, 51, 0.1); }
+}
+
+.adblock-alert-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 165, 0, 0.9);
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.adblock-alert-banner.visible {
+    transform: translateY(0);
+}
+
+.adblock-alert-banner p {
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+
+.adblock-alert-banner .message {
+    font-size: 14px;
+}
+
+.adblock-alert-banner .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+} 
